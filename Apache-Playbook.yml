@@ -16,38 +16,38 @@
       tags:
         - install-repo
 
-    - name: "task2 - Create a Directory - Doc Root"
-      file: 
-        path: /var/www/html/learnwithproject.com    
-        state: directory
-        mode: '0755'
-        owner: root
-        group: root
+  - name: "task2 - Create a Directory - Doc Root"
+    file: 
+      path: /var/www/html/learnwithproject.com    
+      state: directory
+      mode: '0755'
+      owner: root
+      group: root
       tags:
         - create-directory
 
-    - name: "Configuration Apache with docroot & Timeout 300 Secs"
-      copy:
-        src: /etc/ansible/learnwithprojects.com/httpd.conf
-        dest: /etc/httpd/conf/httpd.conf
-        git status owner: root
-        group: root
-        mode: '0644'
+  - name: "Configuration Apache with docroot & Timeout 300 Secs"
+    copy:
+      src: /etc/ansible/learnwithprojects.com/httpd.conf
+      dest: /etc/httpd/conf/httpd.conf
+      git status owner: root
+      group: root
+      mode: '0644'
+      
       tags: 
         - configuration-apache
 
-    - name: "task3 - Code Copy"
-      
+  - name: "task3 - Code Copy"
     - git:
-        repo: 'https://github.com/mailrahulsre/learnwithprojects.com.git'
+      repo: 'https://github.com/mailrahulsre/learnwithprojects.com.git'
         dest: /var/www/html/learnwithproject.com
         version: master
         force: yes
       tags: code-copy
 
-    - name: "Final Task - Start Apache"
-       service: 
-         name: httpd
-         state: started
+  - name: "Final Task - Start Apache"
+      service: 
+        name: httpd
+        state: started
       tags: start-apache
     
