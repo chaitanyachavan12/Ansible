@@ -1,5 +1,5 @@
 ---
-   - name: "Play1 - Install and Configure Apache"
+- name: "Play1 - Install and Configure Apache"
      hosts: webservers
      become: yes
      tasks:
@@ -31,7 +31,7 @@
       copy:
         src: /etc/ansible/learnwithprojects.com/httpd.conf
         dest: /etc/httpd/conf/httpd.conf
-        owner: root
+        git status owner: root
         group: root
         mode: '0644'
       tags: 
