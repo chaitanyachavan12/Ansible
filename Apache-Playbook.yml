@@ -1,8 +1,8 @@
 ---
-- name: "Play1 - Install and Configure Apache"
-  hosts: webservers
-  become: yes
-  tasks:
+   - name: "Play1 - Install and Configure Apache"
+     hosts: webservers
+     become: yes
+     tasks:
 
     - name: "task1 - Install Apache"
       yum:
@@ -46,10 +46,10 @@
         force: yes
       tags: code-copy
 
-    -name: "Final Task - Start Apache"
-     service: 
-       name: httpd
-       state: started
+    - name: "Final Task - Start Apache"
+      service: 
+        name: httpd
+        state: started
       tags: start-apache
     
         
