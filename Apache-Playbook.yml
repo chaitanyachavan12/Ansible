@@ -38,7 +38,7 @@
         - configuration-apache
 
   - name: "task3 - Code Copy"
-    - git:
+     git:
       repo: 'https://github.com/mailrahulsre/learnwithprojects.com.git'
         dest: /var/www/html/learnwithproject.com
         version: master
