@@ -29,7 +29,7 @@
 
     - name: "Configuration Apache with docroot & Timeout 300 Secs"
       copy:
-        src: /etc/ansible/learnwithprojects.com/httpd.conf
+        src: /home/ansadmin/Ansible
         dest: /etc/httpd/conf/httpd.conf
         owner: root
         group: root
@@ -40,8 +40,8 @@
 
     - name: "task3 - Code Copy"
       git:
-        repo: 'https://github.com/mailrahulsre/learnwithprojects.com.git'
-        dest: /var/www/html/learnwithproject.com
+        repo: 'https://github.com/chaitanyachavan12/Ansible.git'
+        dest: /var/www/html/
         version: master
         force: yes
       tags: code-copy
