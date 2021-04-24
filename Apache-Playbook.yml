@@ -1,10 +1,9 @@
 ---
 - name: "Play1 - Install and Configure Apache"
-     hosts: webservers
-     become: yes
-     tasks:
-
-    - name: "task1 - Install Apache"
+  hosts: webservers
+  become: yes
+  tasks:
+  - name: "task1 - Install Apache"
       yum:
         name: "{{ packages }}"
       var:
