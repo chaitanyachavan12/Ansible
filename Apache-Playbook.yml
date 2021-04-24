@@ -19,7 +19,7 @@
 
     - name: "task2 - Create a Directory - Doc Root"
       file: 
-        path: /var/www/html/learnwithproject.com    
+        path: /var/www/html/   
         state: directory
         mode: '0755'
         owner: root
