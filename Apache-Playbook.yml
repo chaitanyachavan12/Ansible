@@ -4,10 +4,10 @@
   become: yes
   tasks:
   - name: "task1 - Install Apache"
-      yum:
-        name: "{{ packages }}"
-      var:
-        packages:
+    yum:
+      name: "{{ packages }}"
+    var:
+      packages:
         - httpd
         - vim
         - wget
